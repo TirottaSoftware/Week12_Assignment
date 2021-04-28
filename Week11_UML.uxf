@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>396</x>
+      <y>432</y>
+      <w>315</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>
+&lt;&lt;Abstract&gt;&gt;
+Person
+
+--
+ -firstName : string
+ -lastName : string
+ -pcn : int
+ -workshops : Dictionary&lt;Workshop, string&gt;
+--
+ +FirstName {get;set}: string
+ +LastName {get;set}: string
+ +PCN {get;set}: int
+--
+ +Person(string firstName, string lastName, string pcn) 
+ +ToString(): string
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>558</x>
+      <y>702</y>
+      <w>189</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>Teacher
+--
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>351</x>
+      <y>702</y>
+      <w>189</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>Student
+--
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>963</x>
+      <y>432</y>
+      <w>333</w>
+      <h>243</h>
+    </coordinates>
+    <panel_attributes>
+&lt;&lt;Abstract&gt;&gt;
+Workshop
+
+--
+ -title : string
+ -description : string
+ -participants: List&lt;Person&gt;
+--
+ +Title: string
+ +Description: string
+ +Location: string
+ +IsAvailable: bool
+--
+ +AddParticipant(Person person): void
+ +RemoveParticipant(Person person): void
+ +ToString(): string
+ +Workshop(string title, string description)
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>675</x>
+      <y>126</y>
+      <w>333</w>
+      <h>225</h>
+    </coordinates>
+    <panel_attributes>
+Dashboard
+
+--
+ -workshops: List&lt;Workshop&gt;
+ -people: List&lt;Person&gt;
+--
+ +AddPerson(Person person): void
+ +RemovePerson(Person person) : void
+ +EditPerson(Person person) : Person
+ +GetPersonInfo(Person person) : string
+ +AddWorkshop(Workshop ws): void
+ +RemoveWorkshop(Workshop ws): void
+ +EditWorkshop(Workshop ws):  Workshop
+ +GetWorkshopInfo(Workshop ws): string
+ +GetAllWorkshops(): string
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>594</x>
+      <y>297</y>
+      <w>99</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;150.0;10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>999</x>
+      <y>297</y>
+      <w>72</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>60.0;150.0;60.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>576</x>
+      <y>639</y>
+      <w>27</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>504</x>
+      <y>639</y>
+      <w>27</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>1053</x>
+      <y>396</y>
+      <w>90</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>-workshops</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>603</x>
+      <y>405</y>
+      <w>54</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>-people</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>1035</x>
+      <y>396</y>
+      <w>18</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>*</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>585</x>
+      <y>405</y>
+      <w>18</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>*</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1260</x>
+      <y>783</y>
+      <w>333</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>
+OnlineWorkshop
+
+--
+ -url: string
+--
+ +URL: string
+--
++OnlineWorkshop(string title, string description, string url)
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>765</x>
+      <y>783</y>
+      <w>477</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>
+InBuildingWorkshop
+
+--
+ -address: string
+ -roomNumber: int
+--
+ +Address: string
+ +RoomNumber: int
+--
++InBuildingWorkshop(string title, string description, string address, int roomNumber)
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>972</x>
+      <y>666</y>
+      <w>27</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1269</x>
+      <y>666</y>
+      <w>27</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+</diagram>
