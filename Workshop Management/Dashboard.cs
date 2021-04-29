@@ -79,14 +79,13 @@ namespace Workshop_Management
 
         private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
         {
-
             Application.Exit();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void lbxPeople_DoubleClick(object sender, EventArgs e)
         {
-            this.people = new List<Person>();
-            Data.UpdatePeople(this.people);
+            Person p = (Person)lbxPeople.SelectedItem;
+            MessageBox.Show($"{p.GetType().Name} \n{p.FirstName} {p.LastName} \nPCN: {p.PCN} \n{p.GetEnrolmentsInfo()}");
         }
     }
 }

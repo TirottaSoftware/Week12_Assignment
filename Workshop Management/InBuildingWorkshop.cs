@@ -29,5 +29,16 @@ namespace Workshop_Management
             this.Address = address;
             this.RoomNumber = roomNumber;
         }
+
+        public override string GenerateWorkshopCode()
+        {
+            Random rnd = new Random();
+            string result = "";
+            result += this.Title[0];
+            result += this.Address[0];
+            result += this.roomNumber;
+            result += rnd.Next(101, 999);
+            return result;
+        }
     }
 }

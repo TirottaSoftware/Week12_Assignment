@@ -21,5 +21,15 @@ namespace Workshop_Management
         {
             this.URL = url;
         }
+
+        public override string GenerateWorkshopCode()
+        {
+
+            Random rnd = new Random();
+            string result = "";
+            result += this.Title[0];
+            result += rnd.Next(1001, 9999);
+            return result;
+        }
     }
 }

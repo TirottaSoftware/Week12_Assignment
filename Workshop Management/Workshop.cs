@@ -65,5 +65,6 @@ namespace Workshop_Management
         {
             return $"{this.Title} | Participants: {this.participants.Count} \n {this.Description}";
         }
+        public abstract string GenerateWorkshopCode();
     }
 }

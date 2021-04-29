@@ -12,7 +12,7 @@ namespace Workshop_Management
         private string firstName;
         private string lastName;
         private int pcn;
-        private Dictionary<Workshop, string> workshops;
+        private Dictionary<Workshop, string> enrolments;
 
         public int PCN
         {
@@ -55,10 +55,34 @@ namespace Workshop_Management
 
         public Person(string firstName, string lastName, int pcn)
         {
-            this.workshops = new Dictionary<Workshop, string>();
+            this.enrolments = new Dictionary<Workshop, string>();
             this.FirstName = firstName;
             this.LastName = lastName;
             this.PCN = pcn;
+        }
+        public void Enroll(Workshop ws)
+        {
+            this.enrolments.Add(ws, ws.GenerateWorkshopCode());
+        }
+        public void Disenroll(Workshop ws)
+        {
+            if (this.enrolments.ContainsKey(ws))
+            {
+                this.enrolments.Remove(ws);
+            }
+            else
+            {
+                throw new ArgumentException($"Workshop not found.");
+            }
+        }
+        public string GetEnrolmentsInfo()
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (var enrolment in this.enrolments)
+            {
+                sb.AppendLine($"{enrolment.Key.Title} - {enrolment.Value}");
+            }
+            return sb.ToString();
         }
         public override string ToString()
         {

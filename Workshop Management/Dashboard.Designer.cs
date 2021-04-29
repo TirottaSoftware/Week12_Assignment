@@ -37,7 +37,6 @@ namespace Workshop_Management
             this.btnAddPerson = new System.Windows.Forms.Button();
             this.btnRemovePerson = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbxPeople
@@ -49,6 +48,7 @@ namespace Workshop_Management
             this.lbxPeople.Name = "lbxPeople";
             this.lbxPeople.Size = new System.Drawing.Size(241, 312);
             this.lbxPeople.TabIndex = 0;
+            this.lbxPeople.DoubleClick += new System.EventHandler(this.lbxPeople_DoubleClick);
             // 
             // cbxSort
             // 
@@ -63,7 +63,7 @@ namespace Workshop_Management
             // 
             this.lblSort.AutoSize = true;
             this.lblSort.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSort.Location = new System.Drawing.Point(13, 44);
+            this.lblSort.Location = new System.Drawing.Point(8, 44);
             this.lblSort.Name = "lblSort";
             this.lblSort.Size = new System.Drawing.Size(76, 22);
             this.lblSort.TabIndex = 2;
@@ -128,27 +128,12 @@ namespace Workshop_Management
             this.label1.Size = new System.Drawing.Size(807, 2);
             this.label1.TabIndex = 2;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = global::Workshop_Management.Properties.Resources.pencil;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(421, 74);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(36, 35);
-            this.button1.TabIndex = 7;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 398);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEditPerson);
             this.Controls.Add(this.btnAddPerson);
@@ -157,8 +142,9 @@ namespace Workshop_Management
             this.Controls.Add(this.lblSort);
             this.Controls.Add(this.cbxSort);
             this.Controls.Add(this.lbxPeople);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Dashboard";
-            this.Text = "Form1";
+            this.Text = "Workshop Management";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Dashboard_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -175,7 +161,6 @@ namespace Workshop_Management
         private System.Windows.Forms.Button btnAddPerson;
         private System.Windows.Forms.Button btnEditPerson;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
     }
 }
 
