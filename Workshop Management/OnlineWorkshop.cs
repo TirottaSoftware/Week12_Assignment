@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Workshop_Management
 {
+    [Serializable]
     public class OnlineWorkshop : Workshop
     {
         private string url;

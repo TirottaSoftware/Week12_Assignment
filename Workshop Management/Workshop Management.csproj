@@ -46,12 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddPersonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPersonForm.Designer.cs">
+      <DependentUpon>AddPersonForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Data.cs" />
     <Compile Include="InBuildingWorkshop.cs" />
     <Compile Include="OnlineWorkshop.cs" />
     <Compile Include="Person.cs" />
@@ -60,6 +67,12 @@
     <Compile Include="Student.cs" />
     <Compile Include="Teacher.cs" />
     <Compile Include="Workshop.cs" />
+    <EmbeddedResource Include="AddPersonForm.resx">
+      <DependentUpon>AddPersonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -68,7 +81,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include=".editorconfig" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -81,6 +96,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\36-369732_add-a-new-row-remove-this-row-delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\126-1266783_all-photo-png-clipart-add-user-small-icons.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-icon-icon-11553444934axir52hn6q.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencil.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
