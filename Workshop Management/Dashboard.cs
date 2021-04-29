@@ -18,8 +18,10 @@ namespace Workshop_Management
         public Dashboard()
         {
             this.people = Data.GetPeople();
+            this.workshops = Data.GetWorkshops();
             InitializeComponent();
             UpdatePeopleList();
+            UpdateWorkshopsList();
         }
         private void UpdatePeopleList()
         {
@@ -29,6 +31,17 @@ namespace Workshop_Management
                 if (p != null)
                 {
                     lbxPeople.Items.Add(p);
+                }
+            }
+        }
+        private void UpdateWorkshopsList()
+        {
+            lbxWorkshops.Items.Clear();
+            foreach (var w in this.workshops)
+            {
+                if (w != null)
+                {
+                    lbxWorkshops.Items.Add(w);
                 }
             }
         }
@@ -45,16 +58,18 @@ namespace Workshop_Management
                 throw new ArgumentException($"{person.FirstName} {person.LastName} not found.");
             }
         }
-        private void EditPerson(Person person)
+        private void RemoveWorkshop(Workshop ws)
         {
-            //TODO: Create and Implement EditPersonForm
-            //Create an EditForm obj and pass the current person
-            //Show EditForm
-        }
-        private void GetPersonInfo(Person person)
-        {
-            //TODO: Create & Implement PersonInfoForm
-            //Pass person and open PersonInfoForm
+            if (this.workshops.Contains(ws))
+            {
+                this.workshops.Remove(ws);
+                Data.UpdateWorkshops(this.workshops);
+                UpdateWorkshopsList();
+            }
+            else
+            {
+                throw new ArgumentException($"{ws.Title} not found.");
+            }
         }
 
         private void btnAddPerson_Click(object sender, EventArgs e)
@@ -86,6 +101,26 @@ namespace Workshop_Management
         {
             Person p = (Person)lbxPeople.SelectedItem;
             MessageBox.Show($"{p.GetType().Name} \n{p.FirstName} {p.LastName} \nPCN: {p.PCN} \n{p.GetEnrolmentsInfo()}");
+        }
+
+        private void btnAddWorkshop_Click(object sender, EventArgs e)
+        {
+            AddWorkshopForm addWorkshopForm = new AddWorkshopForm();
+            this.Hide();
+            addWorkshopForm.ShowDialog();
+        }
+
+        private void btnRemoveWorkshop_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Workshop ws = (Workshop)lbxWorkshops.SelectedItem;
+                this.RemoveWorkshop(ws);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

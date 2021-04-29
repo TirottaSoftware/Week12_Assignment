@@ -39,11 +39,12 @@ namespace Workshop_Management
             }
         }
         public bool IsAvailable => this.participants.Count < this.Capacity;
-        public Workshop(string title, string description)
+        public Workshop(string title, string description, int capacity)
         {
             this.participants = new List<Person>();
             this.Title = title;
             this.Description = description;
+            this.Capacity = capacity;
         }
         public void AddParticipant(Person person)
         {
@@ -65,6 +66,7 @@ namespace Workshop_Management
         {
             return $"{this.Title} | Participants: {this.participants.Count} \n {this.Description}";
         }
+        public List<Person> GetParticipants => this.participants.ToList();
         public abstract string GenerateWorkshopCode();
     }
 }

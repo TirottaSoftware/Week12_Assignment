@@ -24,7 +24,7 @@ namespace Workshop_Management
             set { address = value; }
         }
 
-        public InBuildingWorkshop(string title, string description, string address, int roomNumber) : base(title, description)
+        public InBuildingWorkshop(string title, string description,int capacity, string address, int roomNumber) : base(title, description, capacity)
         {
             this.Address = address;
             this.RoomNumber = roomNumber;

@@ -30,13 +30,21 @@ namespace Workshop_Management
         private void InitializeComponent()
         {
             this.lbxPeople = new System.Windows.Forms.ListBox();
-            this.cbxSort = new System.Windows.Forms.ComboBox();
-            this.lblSort = new System.Windows.Forms.Label();
+            this.cbxSortPeople = new System.Windows.Forms.ComboBox();
+            this.lblSortPeople = new System.Windows.Forms.Label();
             this.lblPeopleTitle = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblSortWorkshops = new System.Windows.Forms.Label();
+            this.cbxSortWorkshops = new System.Windows.Forms.ComboBox();
+            this.lbxWorkshops = new System.Windows.Forms.ListBox();
+            this.lblSort = new System.Windows.Forms.Label();
+            this.lblWorkshopsTitle = new System.Windows.Forms.Label();
+            this.btnEditWorkshop = new System.Windows.Forms.Button();
+            this.btnAddWorkshop = new System.Windows.Forms.Button();
+            this.btnRemoveWorkshop = new System.Windows.Forms.Button();
             this.btnEditPerson = new System.Windows.Forms.Button();
             this.btnAddPerson = new System.Windows.Forms.Button();
             this.btnRemovePerson = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbxPeople
@@ -50,14 +58,71 @@ namespace Workshop_Management
             this.lbxPeople.TabIndex = 0;
             this.lbxPeople.DoubleClick += new System.EventHandler(this.lbxPeople_DoubleClick);
             // 
-            // cbxSort
+            // cbxSortPeople
             // 
-            this.cbxSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxSort.FormattingEnabled = true;
-            this.cbxSort.Location = new System.Drawing.Point(94, 44);
-            this.cbxSort.Name = "cbxSort";
-            this.cbxSort.Size = new System.Drawing.Size(159, 24);
-            this.cbxSort.TabIndex = 1;
+            this.cbxSortPeople.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxSortPeople.FormattingEnabled = true;
+            this.cbxSortPeople.Location = new System.Drawing.Point(94, 44);
+            this.cbxSortPeople.Name = "cbxSortPeople";
+            this.cbxSortPeople.Size = new System.Drawing.Size(159, 24);
+            this.cbxSortPeople.TabIndex = 1;
+            // 
+            // lblSortPeople
+            // 
+            this.lblSortPeople.AutoSize = true;
+            this.lblSortPeople.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSortPeople.Location = new System.Drawing.Point(8, 44);
+            this.lblSortPeople.Name = "lblSortPeople";
+            this.lblSortPeople.Size = new System.Drawing.Size(76, 22);
+            this.lblSortPeople.TabIndex = 2;
+            this.lblSortPeople.Text = "Sort By:";
+            // 
+            // lblPeopleTitle
+            // 
+            this.lblPeopleTitle.AutoSize = true;
+            this.lblPeopleTitle.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPeopleTitle.Location = new System.Drawing.Point(89, 5);
+            this.lblPeopleTitle.Name = "lblPeopleTitle";
+            this.lblPeopleTitle.Size = new System.Drawing.Size(86, 26);
+            this.lblPeopleTitle.TabIndex = 3;
+            this.lblPeopleTitle.Text = "People";
+            // 
+            // label1
+            // 
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label1.Location = new System.Drawing.Point(-148, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(807, 2);
+            this.label1.TabIndex = 2;
+            // 
+            // lblSortWorkshops
+            // 
+            this.lblSortWorkshops.AutoSize = true;
+            this.lblSortWorkshops.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSortWorkshops.Location = new System.Drawing.Point(397, 44);
+            this.lblSortWorkshops.Name = "lblSortWorkshops";
+            this.lblSortWorkshops.Size = new System.Drawing.Size(76, 22);
+            this.lblSortWorkshops.TabIndex = 9;
+            this.lblSortWorkshops.Text = "Sort By:";
+            // 
+            // cbxSortWorkshops
+            // 
+            this.cbxSortWorkshops.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxSortWorkshops.FormattingEnabled = true;
+            this.cbxSortWorkshops.Location = new System.Drawing.Point(483, 44);
+            this.cbxSortWorkshops.Name = "cbxSortWorkshops";
+            this.cbxSortWorkshops.Size = new System.Drawing.Size(159, 24);
+            this.cbxSortWorkshops.TabIndex = 8;
+            // 
+            // lbxWorkshops
+            // 
+            this.lbxWorkshops.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbxWorkshops.FormattingEnabled = true;
+            this.lbxWorkshops.ItemHeight = 22;
+            this.lbxWorkshops.Location = new System.Drawing.Point(401, 74);
+            this.lbxWorkshops.Name = "lbxWorkshops";
+            this.lbxWorkshops.Size = new System.Drawing.Size(241, 312);
+            this.lbxWorkshops.TabIndex = 7;
             // 
             // lblSort
             // 
@@ -69,15 +134,56 @@ namespace Workshop_Management
             this.lblSort.TabIndex = 2;
             this.lblSort.Text = "Sort By:";
             // 
-            // lblPeopleTitle
+            // lblWorkshopsTitle
             // 
-            this.lblPeopleTitle.AutoSize = true;
-            this.lblPeopleTitle.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPeopleTitle.Location = new System.Drawing.Point(89, 5);
-            this.lblPeopleTitle.Name = "lblPeopleTitle";
-            this.lblPeopleTitle.Size = new System.Drawing.Size(86, 26);
-            this.lblPeopleTitle.TabIndex = 3;
-            this.lblPeopleTitle.Text = "People";
+            this.lblWorkshopsTitle.AutoSize = true;
+            this.lblWorkshopsTitle.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWorkshopsTitle.Location = new System.Drawing.Point(467, 5);
+            this.lblWorkshopsTitle.Name = "lblWorkshopsTitle";
+            this.lblWorkshopsTitle.Size = new System.Drawing.Size(128, 26);
+            this.lblWorkshopsTitle.TabIndex = 13;
+            this.lblWorkshopsTitle.Text = "Workshops";
+            // 
+            // btnEditWorkshop
+            // 
+            this.btnEditWorkshop.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditWorkshop.BackgroundImage = global::Workshop_Management.Properties.Resources.pencil;
+            this.btnEditWorkshop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEditWorkshop.FlatAppearance.BorderSize = 0;
+            this.btnEditWorkshop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditWorkshop.Location = new System.Drawing.Point(359, 156);
+            this.btnEditWorkshop.Name = "btnEditWorkshop";
+            this.btnEditWorkshop.Size = new System.Drawing.Size(36, 35);
+            this.btnEditWorkshop.TabIndex = 12;
+            this.btnEditWorkshop.UseVisualStyleBackColor = false;
+            // 
+            // btnAddWorkshop
+            // 
+            this.btnAddWorkshop.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddWorkshop.BackgroundImage = global::Workshop_Management.Properties.Resources.plus;
+            this.btnAddWorkshop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAddWorkshop.FlatAppearance.BorderSize = 0;
+            this.btnAddWorkshop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddWorkshop.Location = new System.Drawing.Point(359, 74);
+            this.btnAddWorkshop.Name = "btnAddWorkshop";
+            this.btnAddWorkshop.Size = new System.Drawing.Size(36, 35);
+            this.btnAddWorkshop.TabIndex = 11;
+            this.btnAddWorkshop.UseVisualStyleBackColor = false;
+            this.btnAddWorkshop.Click += new System.EventHandler(this.btnAddWorkshop_Click);
+            // 
+            // btnRemoveWorkshop
+            // 
+            this.btnRemoveWorkshop.BackColor = System.Drawing.Color.Transparent;
+            this.btnRemoveWorkshop.BackgroundImage = global::Workshop_Management.Properties.Resources.remove;
+            this.btnRemoveWorkshop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRemoveWorkshop.FlatAppearance.BorderSize = 0;
+            this.btnRemoveWorkshop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveWorkshop.Location = new System.Drawing.Point(359, 115);
+            this.btnRemoveWorkshop.Name = "btnRemoveWorkshop";
+            this.btnRemoveWorkshop.Size = new System.Drawing.Size(36, 35);
+            this.btnRemoveWorkshop.TabIndex = 10;
+            this.btnRemoveWorkshop.UseVisualStyleBackColor = false;
+            this.btnRemoveWorkshop.Click += new System.EventHandler(this.btnRemoveWorkshop_Click);
             // 
             // btnEditPerson
             // 
@@ -120,27 +226,26 @@ namespace Workshop_Management
             this.btnRemovePerson.UseVisualStyleBackColor = false;
             this.btnRemovePerson.Click += new System.EventHandler(this.btnRemovePerson_Click);
             // 
-            // label1
-            // 
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Location = new System.Drawing.Point(-2, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(807, 2);
-            this.label1.TabIndex = 2;
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(800, 398);
+            this.ClientSize = new System.Drawing.Size(654, 398);
+            this.Controls.Add(this.lblWorkshopsTitle);
+            this.Controls.Add(this.btnEditWorkshop);
+            this.Controls.Add(this.btnAddWorkshop);
+            this.Controls.Add(this.btnRemoveWorkshop);
+            this.Controls.Add(this.lblSortWorkshops);
+            this.Controls.Add(this.cbxSortWorkshops);
+            this.Controls.Add(this.lbxWorkshops);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEditPerson);
             this.Controls.Add(this.btnAddPerson);
             this.Controls.Add(this.btnRemovePerson);
             this.Controls.Add(this.lblPeopleTitle);
-            this.Controls.Add(this.lblSort);
-            this.Controls.Add(this.cbxSort);
+            this.Controls.Add(this.lblSortPeople);
+            this.Controls.Add(this.cbxSortPeople);
             this.Controls.Add(this.lbxPeople);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Dashboard";
@@ -154,13 +259,21 @@ namespace Workshop_Management
         #endregion
 
         private System.Windows.Forms.ListBox lbxPeople;
-        private System.Windows.Forms.ComboBox cbxSort;
-        private System.Windows.Forms.Label lblSort;
+        private System.Windows.Forms.ComboBox cbxSortPeople;
+        private System.Windows.Forms.Label lblSortPeople;
         private System.Windows.Forms.Label lblPeopleTitle;
         private System.Windows.Forms.Button btnRemovePerson;
         private System.Windows.Forms.Button btnAddPerson;
         private System.Windows.Forms.Button btnEditPerson;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnEditWorkshop;
+        private System.Windows.Forms.Button btnAddWorkshop;
+        private System.Windows.Forms.Button btnRemoveWorkshop;
+        private System.Windows.Forms.Label lblSortWorkshops;
+        private System.Windows.Forms.ComboBox cbxSortWorkshops;
+        private System.Windows.Forms.ListBox lbxWorkshops;
+        private System.Windows.Forms.Label lblSort;
+        private System.Windows.Forms.Label lblWorkshopsTitle;
     }
 }
 

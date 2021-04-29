@@ -17,14 +17,13 @@ namespace Workshop_Management
             set { url = value; }
         }
 
-        public OnlineWorkshop(string title, string description, string url) : base(title, description)
+        public OnlineWorkshop(string title, string description, int capacity, string url) : base(title, description, capacity)
         {
             this.URL = url;
         }
 
         public override string GenerateWorkshopCode()
         {
-
             Random rnd = new Random();
             string result = "";
             result += this.Title[0];

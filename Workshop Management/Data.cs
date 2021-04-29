@@ -63,5 +63,57 @@ namespace Workshop_Management
                 }
             }
         }
+
+        public static List<Workshop> GetWorkshops()
+        {
+            List<Workshop> workshops = new List<Workshop>();
+            FileStream fs = null;
+            BinaryFormatter bf = null;
+            try
+            {
+                fs = new FileStream("workshops.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                bf = new BinaryFormatter();
+
+                if (fs.Length > 0)
+                {
+                    workshops = (List<Workshop>)bf.Deserialize(fs);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (fs != null)
+                {
+                    fs.Close();
+                }
+            }
+            return workshops;
+        }
+        public static void UpdateWorkshops(List<Workshop> workshops)
+        {
+            FileStream fs = null;
+            BinaryFormatter bf = null;
+            try
+            {
+                fs = new FileStream("workshops.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                bf = new BinaryFormatter();
+
+                bf.Serialize(fs, workshops);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (fs != null)
+                {
+                    fs.Close();
+                }
+            }
+        }
     }
 }

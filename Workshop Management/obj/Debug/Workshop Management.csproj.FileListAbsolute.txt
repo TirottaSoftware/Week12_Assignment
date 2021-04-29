@@ -1,11 +1,11 @@
+C:\Users\Cristian\source\repos\Workshop Management\Week12_Assignment\Workshop Management\obj\Debug\Workshop_Management.AddPersonForm.resources
+C:\Users\Cristian\source\repos\Workshop Management\Week12_Assignment\Workshop Management\obj\Debug\Workshop_Management.AddWorkshopForm.resources
+C:\Users\Cristian\source\repos\Workshop Management\Week12_Assignment\Workshop Management\obj\Debug\Workshop_Management.Dashboard.resources
+C:\Users\Cristian\source\repos\Workshop Management\Week12_Assignment\Workshop Management\obj\Debug\Workshop Management.csproj.GenerateResource.cache
 C:\Users\Cristian\source\repos\Workshop Management\Week12_Assignment\Workshop Management\bin\Debug\Workshop Management.exe.config
 C:\Users\Cristian\source\repos\Workshop Management\Week12_Assignment\Workshop Management\bin\Debug\Workshop Management.exe
 C:\Users\Cristian\source\repos\Workshop Management\Week12_Assignment\Workshop Management\bin\Debug\Workshop Management.pdb
-C:\Users\Cristian\source\repos\Workshop Management\Week12_Assignment\Workshop Management\obj\Debug\Workshop Management.csprojAssemblyReference.cache
-C:\Users\Cristian\source\repos\Workshop Management\Week12_Assignment\Workshop Management\obj\Debug\Workshop_Management.AddPersonForm.resources
-C:\Users\Cristian\source\repos\Workshop Management\Week12_Assignment\Workshop Management\obj\Debug\Workshop_Management.Dashboard.resources
 C:\Users\Cristian\source\repos\Workshop Management\Week12_Assignment\Workshop Management\obj\Debug\Workshop_Management.Properties.Resources.resources
-C:\Users\Cristian\source\repos\Workshop Management\Week12_Assignment\Workshop Management\obj\Debug\Workshop Management.csproj.GenerateResource.cache
 C:\Users\Cristian\source\repos\Workshop Management\Week12_Assignment\Workshop Management\obj\Debug\Workshop Management.csproj.CoreCompileInputs.cache
 C:\Users\Cristian\source\repos\Workshop Management\Week12_Assignment\Workshop Management\obj\Debug\Workshop Management.exe
 C:\Users\Cristian\source\repos\Workshop Management\Week12_Assignment\Workshop Management\obj\Debug\Workshop Management.pdb
