@@ -122,5 +122,13 @@ namespace Workshop_Management
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btnEditPerson_Click(object sender, EventArgs e)
+        {
+            Person p = (Person)lbxPeople.SelectedItem;
+            EditPersonForm editPersonForm = new EditPersonForm(p);
+            editPersonForm.ShowDialog();
+            this.Hide();
+        }
     }
 }

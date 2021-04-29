@@ -197,6 +197,7 @@ namespace Workshop_Management
             this.btnEditPerson.Size = new System.Drawing.Size(36, 35);
             this.btnEditPerson.TabIndex = 6;
             this.btnEditPerson.UseVisualStyleBackColor = false;
+            this.btnEditPerson.Click += new System.EventHandler(this.btnEditPerson_Click);
             // 
             // btnAddPerson
             // 
