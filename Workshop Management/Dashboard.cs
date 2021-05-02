@@ -130,5 +130,14 @@ namespace Workshop_Management
             editPersonForm.ShowDialog();
             this.Hide();
         }
+
+        private void btnEditWorkshop_Click(object sender, EventArgs e)
+        {
+            Workshop ws = (Workshop)lbxWorkshops.SelectedItem;
+            EditWorkshopForm editWorkshopForm = new EditWorkshopForm(ws);
+            this.Hide();
+            editWorkshopForm.ShowDialog();
+            
+        }
     }
 }

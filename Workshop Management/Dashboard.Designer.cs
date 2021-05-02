@@ -156,6 +156,7 @@ namespace Workshop_Management
             this.btnEditWorkshop.Size = new System.Drawing.Size(36, 35);
             this.btnEditWorkshop.TabIndex = 12;
             this.btnEditWorkshop.UseVisualStyleBackColor = false;
+            this.btnEditWorkshop.Click += new System.EventHandler(this.btnEditWorkshop_Click);
             // 
             // btnAddWorkshop
             // 

@@ -14,7 +14,12 @@ namespace Workshop_Management
         public string URL
         {
             get { return url; }
-            set { url = value; }
+            set {
+                if (String.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentException($"URL cannot be empty.");
+                }
+                url = value; }
         }
 
         public OnlineWorkshop(string title, string description, int capacity, string url) : base(title, description, capacity)
