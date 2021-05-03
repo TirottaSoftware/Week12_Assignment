@@ -123,6 +123,7 @@ namespace Workshop_Management
             this.lbxWorkshops.Name = "lbxWorkshops";
             this.lbxWorkshops.Size = new System.Drawing.Size(241, 312);
             this.lbxWorkshops.TabIndex = 7;
+            this.lbxWorkshops.DoubleClick += new System.EventHandler(this.lbxWorkshops_DoubleClick);
             // 
             // lblSort
             // 

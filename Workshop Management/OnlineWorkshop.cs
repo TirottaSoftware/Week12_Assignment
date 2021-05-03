@@ -27,7 +27,7 @@ namespace Workshop_Management
             this.URL = url;
         }
 
-        public override string GenerateWorkshopCode()
+        protected override string GenerateWorkshopCode()
         {
             Random rnd = new Random();
             string result = "";

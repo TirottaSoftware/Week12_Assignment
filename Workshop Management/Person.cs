@@ -62,7 +62,7 @@ namespace Workshop_Management
         }
         public void Enroll(Workshop ws)
         {
-            this.enrolments.Add(ws, ws.GenerateWorkshopCode());
+            this.enrolments.Add(ws, ws.WorkshopCode);
         }
         public void Disenroll(Workshop ws)
         {

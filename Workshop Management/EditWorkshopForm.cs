@@ -40,7 +40,7 @@ namespace Workshop_Management
                 tbxAddress.Text = inBuildingWs.Address;
                 numRoomNumber.Value = inBuildingWs.RoomNumber;
             }
-             ws = this.workshops.First(w => w.Title == workshop.Title);
+            ws = this.workshops.First(w => w.Title == workshop.Title);
         }
 
         private void btnSave_Click(object sender, EventArgs e)

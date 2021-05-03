@@ -139,5 +139,13 @@ namespace Workshop_Management
             editWorkshopForm.ShowDialog();
             
         }
+
+        private void lbxWorkshops_DoubleClick(object sender, EventArgs e)
+        {
+            Workshop selectedWorkshop = (Workshop)lbxWorkshops.SelectedItem;
+            WorkshopInfoForm workshopInfoForm = new WorkshopInfoForm(selectedWorkshop);
+            this.Hide();
+            workshopInfoForm.ShowDialog();
+        }
     }
 }

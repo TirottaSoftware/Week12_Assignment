@@ -12,6 +12,10 @@ namespace Workshop_Management
         private string title;
         private List<Person> participants;
         private int capacity;
+        public string WorkshopCode
+        {
+            get;
+        }
 
         public string Title
         {
@@ -45,6 +49,7 @@ namespace Workshop_Management
             this.Title = title;
             this.Description = description;
             this.Capacity = capacity;
+            this.WorkshopCode = GenerateWorkshopCode();
         }
         public void AddParticipant(Person person)
         {
@@ -52,13 +57,17 @@ namespace Workshop_Management
             {
                 throw new ArgumentException($"{person.FirstName} {person.LastName} is already in the workshop");
             }
+            if (!this.IsAvailable)
+            {
+                throw new ArgumentException($"Workshop is full");
+            }
             this.participants.Add(person);
         }
         public void RemoveParticipant(Person person)
         {
-            if (!this.participants.Contains(person))
+            if (this.participants.FirstOrDefault(p=>p.PCN == person.PCN) == null)
             {
-                throw new ArgumentException($"{person.FirstName} {person.LastName} not found.");
+                throw new ArgumentException($"person not found.");
             }
             this.participants.Remove(person);
         }
@@ -66,7 +75,7 @@ namespace Workshop_Management
         {
             return $"{this.Title} | Participants: {this.participants.Count} \n {this.Description}";
         }
-        public List<Person> GetParticipants => this.participants.ToList();
-        public abstract string GenerateWorkshopCode();
+        public List<Person> GetParticipants() => this.participants.ToList();
+        protected abstract string GenerateWorkshopCode();
     }
 }

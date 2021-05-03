@@ -89,7 +89,19 @@
     </Compile>
     <Compile Include="Student.cs" />
     <Compile Include="Teacher.cs" />
+    <Compile Include="ViewParticipantsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewParticipantsForm.Designer.cs">
+      <DependentUpon>ViewParticipantsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Workshop.cs" />
+    <Compile Include="WorkshopInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkshopInfoForm.Designer.cs">
+      <DependentUpon>WorkshopInfoForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddPersonForm.resx">
       <DependentUpon>AddPersonForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,6 +121,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewParticipantsForm.resx">
+      <DependentUpon>ViewParticipantsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkshopInfoForm.resx">
+      <DependentUpon>WorkshopInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include=".editorconfig" />
     <None Include="Properties\Settings.settings">

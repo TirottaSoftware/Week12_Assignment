@@ -30,7 +30,7 @@ namespace Workshop_Management
             this.RoomNumber = roomNumber;
         }
 
-        public override string GenerateWorkshopCode()
+        protected override string GenerateWorkshopCode()
         {
             Random rnd = new Random();
             string result = "";
