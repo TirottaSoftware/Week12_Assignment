@@ -39,12 +39,16 @@ namespace Workshop_Management
         {
             try
             {
+                if (!workshop.IsAvailable)
+                {
+                    throw new Exception($"Workshop has already started");
+                }
                 Person selectedPerson = (Person)cbxPeople.SelectedItem;
                 if (selectedPerson == null)
                 {
                     throw new NullReferenceException();
                 }
-                if (this.workshop.GetParticipants().FirstOrDefault(p=>p.PCN == selectedPerson.PCN) != null)
+                if (this.workshop.GetParticipants().FirstOrDefault(p => p.PCN == selectedPerson.PCN) != null)
                 {
                     throw new ArgumentException($"{selectedPerson.FirstName} {selectedPerson.LastName} already in the list");
                 }
@@ -81,11 +85,39 @@ namespace Workshop_Management
                 Data.UpdateWorkshops(this.workshops);
                 RefreshList();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 return;
             }
+        }
+
+        private void btnStartWorkshop_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!this.workshop.IsAvailable)
+                {
+                    throw new Exception($"Workshop has already started");
+                }
+                else
+                {
+                    this.workshop.IsAvailable = false;
+                    Data.UpdateWorkshops(this.workshops);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Dashboard db = new Dashboard();
+            db.ShowDialog();
         }
     }
 }

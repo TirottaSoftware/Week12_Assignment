@@ -42,7 +42,22 @@ namespace Workshop_Management
                 capacity = value;
             }
         }
-        public bool IsAvailable => this.participants.Count < this.Capacity;
+        private bool isAvailable;
+        public bool IsAvailable {
+            get
+            {
+                if (this.participants.Count == this.capacity)
+                {
+                    return false;
+                }
+                return this.isAvailable;
+            }
+            set
+            {
+                this.isAvailable = value;
+            }
+        }
+
         public Workshop(string title, string description, int capacity)
         {
             this.participants = new List<Person>();

@@ -21,7 +21,7 @@ namespace Workshop_Management
             rtbDescription.Text = ws.Description;
             lblCapacityValue.Text = ws.Capacity.ToString();
             lblWorkshopCode.Text = ws.WorkshopCode;
-            lblParticipantsCount.Text = ws.GetParticipants().Count.ToString();
+            lblParticipantsCount.Text = ws.GetParticipants().Count.ToString() + "/" + ws.Capacity;
             if (ws.GetType().Name == nameof(OnlineWorkshop))
             {
                 var onlineWs = (OnlineWorkshop)ws;
@@ -54,5 +54,7 @@ namespace Workshop_Management
             this.Hide();
             viewParticipantsForm.ShowDialog();
         }
+
+
     }
 }

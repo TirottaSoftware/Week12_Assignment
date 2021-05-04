@@ -23,6 +23,40 @@ namespace Workshop_Management
             UpdatePeopleList();
             UpdateWorkshopsList();
         }
+        private void UpdatePeopleList(string sortOption)
+        {
+            lbxPeople.Items.Clear();
+            if (sortOption == "Alphabetically")
+            {
+                foreach (var p in this.people.OrderBy(p => p.FirstName).ThenBy(p => p.LastName))
+                {
+                    if (p != null)
+                    {
+                        lbxPeople.Items.Add(p);
+                    }
+                }
+            }
+            else if (sortOption == "Students Only")
+            {
+                foreach (var p in this.people.Where(p => p.GetType().Name == nameof(Student)))
+                {
+                    if (p != null)
+                    {
+                        lbxPeople.Items.Add(p);
+                    }
+                }
+            }
+            else if (sortOption == "Teachers Only")
+            {
+                foreach (var p in this.people.Where(p => p.GetType().Name == nameof(Teacher)))
+                {
+                    if (p != null)
+                    {
+                        lbxPeople.Items.Add(p);
+                    }
+                }
+            }
+        }
         private void UpdatePeopleList()
         {
             lbxPeople.Items.Clear();
@@ -40,6 +74,31 @@ namespace Workshop_Management
             foreach (var w in this.workshops)
             {
                 if (w != null)
+                {
+                    lbxWorkshops.Items.Add(w);
+                }
+            }
+        }
+        private void UpdateWorkshopsList(string sortOption)
+        {
+            lbxWorkshops.Items.Clear();
+            if (sortOption == "In Building")
+            {
+                foreach (var w in this.workshops.Where(x => x.GetType().Name == nameof(InBuildingWorkshop)))
+                {
+                    lbxWorkshops.Items.Add(w);
+                }
+            }
+            else if (sortOption == "Online")
+            {
+                foreach (var w in this.workshops.Where(x => x.GetType().Name == nameof(OnlineWorkshop)))
+                {
+                    lbxWorkshops.Items.Add(w);
+                }
+            }
+            else
+            {
+                foreach (var w in this.workshops.OrderBy(x => x.Title))
                 {
                     lbxWorkshops.Items.Add(w);
                 }
@@ -74,9 +133,9 @@ namespace Workshop_Management
 
         private void btnAddPerson_Click(object sender, EventArgs e)
         {
-                AddPersonForm addPersonForm = new AddPersonForm();
-                this.Hide();
-                addPersonForm.ShowDialog();
+            AddPersonForm addPersonForm = new AddPersonForm();
+            this.Hide();
+            addPersonForm.ShowDialog();
         }
 
         private void btnRemovePerson_Click(object sender, EventArgs e)
@@ -137,7 +196,7 @@ namespace Workshop_Management
             EditWorkshopForm editWorkshopForm = new EditWorkshopForm(ws);
             this.Hide();
             editWorkshopForm.ShowDialog();
-            
+
         }
 
         private void lbxWorkshops_DoubleClick(object sender, EventArgs e)
@@ -146,6 +205,18 @@ namespace Workshop_Management
             WorkshopInfoForm workshopInfoForm = new WorkshopInfoForm(selectedWorkshop);
             this.Hide();
             workshopInfoForm.ShowDialog();
+        }
+
+        private void cbxSortPeople_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedOption = cbxSortPeople.SelectedItem.ToString();
+            UpdatePeopleList(selectedOption);
+        }
+
+        private void cbxSortWorkshops_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedOption = cbxSortWorkshops.SelectedItem.ToString();
+            UpdateWorkshopsList(selectedOption);
         }
     }
 }

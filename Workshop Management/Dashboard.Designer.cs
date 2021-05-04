@@ -62,10 +62,15 @@ namespace Workshop_Management
             // 
             this.cbxSortPeople.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxSortPeople.FormattingEnabled = true;
+            this.cbxSortPeople.Items.AddRange(new object[] {
+            "Alphabetically",
+            "Students Only",
+            "Teachers Only"});
             this.cbxSortPeople.Location = new System.Drawing.Point(94, 44);
             this.cbxSortPeople.Name = "cbxSortPeople";
             this.cbxSortPeople.Size = new System.Drawing.Size(159, 24);
             this.cbxSortPeople.TabIndex = 1;
+            this.cbxSortPeople.SelectedIndexChanged += new System.EventHandler(this.cbxSortPeople_SelectedIndexChanged);
             // 
             // lblSortPeople
             // 
@@ -109,10 +114,15 @@ namespace Workshop_Management
             // 
             this.cbxSortWorkshops.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxSortWorkshops.FormattingEnabled = true;
+            this.cbxSortWorkshops.Items.AddRange(new object[] {
+            "Alphabetically",
+            "In Building",
+            "Online"});
             this.cbxSortWorkshops.Location = new System.Drawing.Point(483, 44);
             this.cbxSortWorkshops.Name = "cbxSortWorkshops";
             this.cbxSortWorkshops.Size = new System.Drawing.Size(159, 24);
             this.cbxSortWorkshops.TabIndex = 8;
+            this.cbxSortWorkshops.SelectedIndexChanged += new System.EventHandler(this.cbxSortWorkshops_SelectedIndexChanged);
             // 
             // lbxWorkshops
             // 
