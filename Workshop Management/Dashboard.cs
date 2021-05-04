@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Workshop_Management.Exceptions;
 
 namespace Workshop_Management
 {
@@ -114,7 +115,7 @@ namespace Workshop_Management
             }
             else
             {
-                throw new ArgumentException($"{person.FirstName} {person.LastName} not found.");
+                throw new PersonNotFoundException($"{person.FirstName} {person.LastName} not found.");
             }
         }
         private void RemoveWorkshop(Workshop ws)
@@ -127,7 +128,7 @@ namespace Workshop_Management
             }
             else
             {
-                throw new ArgumentException($"{ws.Title} not found.");
+                throw new WorkshopNotFoundException($"{ws.Title} not found.");
             }
         }
 

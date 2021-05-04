@@ -77,6 +77,10 @@
     <Compile Include="EditWorkshopForm.Designer.cs">
       <DependentUpon>EditWorkshopForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Exceptions\PersonArgumentException.cs" />
+    <Compile Include="Exceptions\PersonNotFoundException.cs" />
+    <Compile Include="Exceptions\WorkshopArgumentException.cs" />
+    <Compile Include="Exceptions\WorkshopNotFoundException.cs" />
     <Compile Include="InBuildingWorkshop.cs" />
     <Compile Include="OnlineWorkshop.cs" />
     <Compile Include="Person.cs" />

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Workshop_Management.Exceptions;
 
 namespace Workshop_Management
 {
@@ -21,7 +22,7 @@ namespace Workshop_Management
             {
                 if (value <= 0)
                 {
-                    throw new ArgumentException($"PCN cannot be zero or less");
+                    throw new PersonArgumentException($"PCN cannot be zero or less");
                 }
                 pcn = value;
             }
@@ -34,7 +35,7 @@ namespace Workshop_Management
             {
                 if (String.IsNullOrEmpty(value))
                 {
-                    throw new ArgumentException($"Last Name cannot be empty");
+                    throw new PersonArgumentException($"Last Name cannot be empty");
                 }
                 lastName = value;
             }
@@ -47,7 +48,7 @@ namespace Workshop_Management
             {
                 if (String.IsNullOrEmpty(value))
                 {
-                    throw new ArgumentException($"First Name cannot be empty");
+                    throw new PersonArgumentException($"First Name cannot be empty");
                 }
                 firstName = value;
             }
@@ -72,7 +73,7 @@ namespace Workshop_Management
             }
             else
             {
-                throw new ArgumentException($"Workshop not found.");
+                throw new WorkshopArgumentException($"Workshop not found.");
             }
         }
         public string GetEnrolmentsInfo()

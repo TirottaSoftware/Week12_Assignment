@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Workshop_Management.Exceptions;
 
 namespace Workshop_Management
 {
@@ -24,7 +25,7 @@ namespace Workshop_Management
             {
                 if (String.IsNullOrEmpty(value))
                 {
-                    throw new ArgumentException($"Title cannot be empty");
+                    throw new WorkshopArgumentException($"Title cannot be empty");
                 }
                 title = value;
             }
@@ -37,7 +38,7 @@ namespace Workshop_Management
             {
                 if (value <= 0)
                 {
-                    throw new ArgumentException($"Capacity cannot be 0 or less");
+                    throw new WorkshopArgumentException($"Capacity cannot be 0 or less");
                 }
                 capacity = value;
             }
@@ -70,11 +71,11 @@ namespace Workshop_Management
         {
             if (this.participants.Contains(person))
             {
-                throw new ArgumentException($"{person.FirstName} {person.LastName} is already in the workshop");
+                throw new WorkshopArgumentException($"{person.FirstName} {person.LastName} is already in the workshop");
             }
             if (!this.IsAvailable)
             {
-                throw new ArgumentException($"Workshop is full");
+                throw new WorkshopArgumentException($"Workshop is full");
             }
             this.participants.Add(person);
         }
@@ -82,7 +83,7 @@ namespace Workshop_Management
         {
             if (this.participants.FirstOrDefault(p=>p.PCN == person.PCN) == null)
             {
-                throw new ArgumentException($"person not found.");
+                throw new WorkshopArgumentException($"person not found.");
             }
             this.participants.Remove(person);
         }
