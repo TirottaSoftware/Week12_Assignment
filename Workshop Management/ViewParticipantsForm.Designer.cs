@@ -30,10 +30,11 @@ namespace Workshop_Management
         private void InitializeComponent()
         {
             this.lbxParticipants = new System.Windows.Forms.ListBox();
-            this.btnAddPerson = new System.Windows.Forms.Button();
             this.cbxPeople = new System.Windows.Forms.ComboBox();
             this.btnStartWorkshop = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
+            this.btnAddPerson = new System.Windows.Forms.Button();
+            this.btnMark = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbxParticipants
@@ -46,20 +47,6 @@ namespace Workshop_Management
             this.lbxParticipants.Size = new System.Drawing.Size(259, 334);
             this.lbxParticipants.TabIndex = 0;
             this.lbxParticipants.DoubleClick += new System.EventHandler(this.lbxParticipants_DoubleClick);
-            // 
-            // btnAddPerson
-            // 
-            this.btnAddPerson.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddPerson.BackgroundImage = global::Workshop_Management.Properties.Resources.plus;
-            this.btnAddPerson.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAddPerson.FlatAppearance.BorderSize = 0;
-            this.btnAddPerson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddPerson.Location = new System.Drawing.Point(235, 12);
-            this.btnAddPerson.Name = "btnAddPerson";
-            this.btnAddPerson.Size = new System.Drawing.Size(36, 30);
-            this.btnAddPerson.TabIndex = 6;
-            this.btnAddPerson.UseVisualStyleBackColor = false;
-            this.btnAddPerson.Click += new System.EventHandler(this.btnAddPerson_Click);
             // 
             // cbxPeople
             // 
@@ -76,9 +63,9 @@ namespace Workshop_Management
             this.btnStartWorkshop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnStartWorkshop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStartWorkshop.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartWorkshop.Location = new System.Drawing.Point(102, 393);
+            this.btnStartWorkshop.Location = new System.Drawing.Point(12, 432);
             this.btnStartWorkshop.Name = "btnStartWorkshop";
-            this.btnStartWorkshop.Size = new System.Drawing.Size(169, 33);
+            this.btnStartWorkshop.Size = new System.Drawing.Size(259, 33);
             this.btnStartWorkshop.TabIndex = 59;
             this.btnStartWorkshop.Text = "Start Workshop";
             this.btnStartWorkshop.UseVisualStyleBackColor = false;
@@ -99,11 +86,40 @@ namespace Workshop_Management
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // btnAddPerson
+            // 
+            this.btnAddPerson.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddPerson.BackgroundImage = global::Workshop_Management.Properties.Resources.plus;
+            this.btnAddPerson.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAddPerson.FlatAppearance.BorderSize = 0;
+            this.btnAddPerson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddPerson.Location = new System.Drawing.Point(235, 12);
+            this.btnAddPerson.Name = "btnAddPerson";
+            this.btnAddPerson.Size = new System.Drawing.Size(36, 30);
+            this.btnAddPerson.TabIndex = 6;
+            this.btnAddPerson.UseVisualStyleBackColor = false;
+            this.btnAddPerson.Click += new System.EventHandler(this.btnAddPerson_Click);
+            // 
+            // btnMark
+            // 
+            this.btnMark.BackColor = System.Drawing.Color.IndianRed;
+            this.btnMark.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnMark.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMark.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnMark.Location = new System.Drawing.Point(102, 393);
+            this.btnMark.Name = "btnMark";
+            this.btnMark.Size = new System.Drawing.Size(171, 33);
+            this.btnMark.TabIndex = 61;
+            this.btnMark.Text = "Mark as Presenter";
+            this.btnMark.UseVisualStyleBackColor = false;
+            this.btnMark.Click += new System.EventHandler(this.btnMark_Click);
+            // 
             // ViewParticipantsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(285, 440);
+            this.ClientSize = new System.Drawing.Size(285, 469);
+            this.Controls.Add(this.btnMark);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnStartWorkshop);
             this.Controls.Add(this.cbxPeople);
@@ -112,7 +128,6 @@ namespace Workshop_Management
             this.Name = "ViewParticipantsForm";
             this.Text = "ViewParticipantsForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ViewParticipantsForm_FormClosed);
-            this.Load += new System.EventHandler(this.ViewParticipantsForm_Load);
             this.ResumeLayout(false);
 
         }
@@ -124,5 +139,6 @@ namespace Workshop_Management
         private System.Windows.Forms.ComboBox cbxPeople;
         private System.Windows.Forms.Button btnStartWorkshop;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnMark;
     }
 }

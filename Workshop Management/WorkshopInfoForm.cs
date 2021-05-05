@@ -22,6 +22,10 @@ namespace Workshop_Management
             lblCapacityValue.Text = ws.Capacity.ToString();
             lblWorkshopCode.Text = ws.WorkshopCode;
             lblParticipantsCount.Text = ws.GetParticipants().Count.ToString() + "/" + ws.Capacity;
+            if (ws.Presenter != null)
+            {
+                lblPresenterName.Text = ws.Presenter.FirstName + " " + ws.Presenter.LastName;
+            }
             if (ws.GetType().Name == nameof(OnlineWorkshop))
             {
                 var onlineWs = (OnlineWorkshop)ws;

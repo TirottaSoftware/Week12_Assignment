@@ -13,6 +13,24 @@ namespace Workshop_Management
         private string title;
         private List<Person> participants;
         private int capacity;
+        private Person presenter;
+
+        public Person Presenter
+        {
+            get
+            {
+                return presenter;
+            }
+            set
+            {
+                if (value.GetType().Name != nameof(Teacher))
+                {
+                    throw new WorkshopArgumentException($"Presenter must be a Teacher");
+                }
+                presenter = value;
+            }
+        }
+
         public string WorkshopCode
         {
             get;

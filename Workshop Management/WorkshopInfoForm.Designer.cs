@@ -47,13 +47,15 @@ namespace Workshop_Management
             this.lblParticipants = new System.Windows.Forms.Label();
             this.btnViewParticipants = new System.Windows.Forms.Button();
             this.lblParticipantsCount = new System.Windows.Forms.Label();
+            this.lblPresenter = new System.Windows.Forms.Label();
+            this.lblPresenterName = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1, 320);
+            this.label2.Location = new System.Drawing.Point(1, 343);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(383, 2);
             this.label2.TabIndex = 48;
@@ -62,7 +64,7 @@ namespace Workshop_Management
             // 
             this.lblURL.AutoSize = true;
             this.lblURL.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblURL.Location = new System.Drawing.Point(23, 343);
+            this.lblURL.Location = new System.Drawing.Point(23, 366);
             this.lblURL.Name = "lblURL";
             this.lblURL.Size = new System.Drawing.Size(38, 21);
             this.lblURL.TabIndex = 47;
@@ -72,7 +74,7 @@ namespace Workshop_Management
             // 
             this.label1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1, 226);
+            this.label1.Location = new System.Drawing.Point(1, 249);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(383, 2);
             this.label1.TabIndex = 45;
@@ -81,7 +83,7 @@ namespace Workshop_Management
             // 
             this.lblRoomNumber.AutoSize = true;
             this.lblRoomNumber.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoomNumber.Location = new System.Drawing.Point(23, 278);
+            this.lblRoomNumber.Location = new System.Drawing.Point(23, 301);
             this.lblRoomNumber.Name = "lblRoomNumber";
             this.lblRoomNumber.Size = new System.Drawing.Size(118, 21);
             this.lblRoomNumber.TabIndex = 43;
@@ -91,7 +93,7 @@ namespace Workshop_Management
             // 
             this.lblAddress.AutoSize = true;
             this.lblAddress.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.Location = new System.Drawing.Point(23, 245);
+            this.lblAddress.Location = new System.Drawing.Point(23, 268);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(72, 21);
             this.lblAddress.TabIndex = 42;
@@ -130,7 +132,7 @@ namespace Workshop_Management
             // 
             this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(21, 66);
+            this.lblDescription.Location = new System.Drawing.Point(17, 66);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(97, 21);
             this.lblDescription.TabIndex = 34;
@@ -140,7 +142,7 @@ namespace Workshop_Management
             // 
             this.lblURLValue.AutoSize = true;
             this.lblURLValue.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblURLValue.Location = new System.Drawing.Point(103, 343);
+            this.lblURLValue.Location = new System.Drawing.Point(103, 366);
             this.lblURLValue.Name = "lblURLValue";
             this.lblURLValue.Size = new System.Drawing.Size(38, 21);
             this.lblURLValue.TabIndex = 51;
@@ -150,7 +152,7 @@ namespace Workshop_Management
             // 
             this.lblRoomNumberValue.AutoSize = true;
             this.lblRoomNumberValue.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoomNumberValue.Location = new System.Drawing.Point(147, 278);
+            this.lblRoomNumberValue.Location = new System.Drawing.Point(147, 301);
             this.lblRoomNumberValue.Name = "lblRoomNumberValue";
             this.lblRoomNumberValue.Size = new System.Drawing.Size(118, 21);
             this.lblRoomNumberValue.TabIndex = 50;
@@ -160,7 +162,7 @@ namespace Workshop_Management
             // 
             this.lblAddressValue.AutoSize = true;
             this.lblAddressValue.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddressValue.Location = new System.Drawing.Point(147, 245);
+            this.lblAddressValue.Location = new System.Drawing.Point(147, 268);
             this.lblAddressValue.Name = "lblAddressValue";
             this.lblAddressValue.Size = new System.Drawing.Size(72, 21);
             this.lblAddressValue.TabIndex = 49;
@@ -190,7 +192,7 @@ namespace Workshop_Management
             // 
             this.label4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(1, 380);
+            this.label4.Location = new System.Drawing.Point(1, 403);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(383, 2);
             this.label4.TabIndex = 55;
@@ -199,7 +201,7 @@ namespace Workshop_Management
             // 
             this.lblParticipants.AutoSize = true;
             this.lblParticipants.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblParticipants.Location = new System.Drawing.Point(23, 403);
+            this.lblParticipants.Location = new System.Drawing.Point(23, 426);
             this.lblParticipants.Name = "lblParticipants";
             this.lblParticipants.Size = new System.Drawing.Size(103, 21);
             this.lblParticipants.TabIndex = 54;
@@ -208,7 +210,7 @@ namespace Workshop_Management
             // btnViewParticipants
             // 
             this.btnViewParticipants.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewParticipants.Location = new System.Drawing.Point(173, 397);
+            this.btnViewParticipants.Location = new System.Drawing.Point(173, 420);
             this.btnViewParticipants.Name = "btnViewParticipants";
             this.btnViewParticipants.Size = new System.Drawing.Size(92, 33);
             this.btnViewParticipants.TabIndex = 56;
@@ -220,17 +222,39 @@ namespace Workshop_Management
             // 
             this.lblParticipantsCount.AutoSize = true;
             this.lblParticipantsCount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblParticipantsCount.Location = new System.Drawing.Point(132, 403);
+            this.lblParticipantsCount.Location = new System.Drawing.Point(132, 426);
             this.lblParticipantsCount.Name = "lblParticipantsCount";
             this.lblParticipantsCount.Size = new System.Drawing.Size(19, 21);
             this.lblParticipantsCount.TabIndex = 57;
             this.lblParticipantsCount.Text = "0";
             // 
+            // lblPresenter
+            // 
+            this.lblPresenter.AutoSize = true;
+            this.lblPresenter.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPresenter.Location = new System.Drawing.Point(23, 214);
+            this.lblPresenter.Name = "lblPresenter";
+            this.lblPresenter.Size = new System.Drawing.Size(82, 21);
+            this.lblPresenter.TabIndex = 58;
+            this.lblPresenter.Text = "Presenter";
+            // 
+            // lblPresenterName
+            // 
+            this.lblPresenterName.AutoSize = true;
+            this.lblPresenterName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPresenterName.Location = new System.Drawing.Point(116, 214);
+            this.lblPresenterName.Name = "lblPresenterName";
+            this.lblPresenterName.Size = new System.Drawing.Size(54, 21);
+            this.lblPresenterName.TabIndex = 59;
+            this.lblPresenterName.Text = "Unset";
+            // 
             // WorkshopInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(383, 447);
+            this.ClientSize = new System.Drawing.Size(383, 468);
+            this.Controls.Add(this.lblPresenterName);
+            this.Controls.Add(this.lblPresenter);
             this.Controls.Add(this.lblParticipantsCount);
             this.Controls.Add(this.btnViewParticipants);
             this.Controls.Add(this.label4);
@@ -277,5 +301,7 @@ namespace Workshop_Management
         private System.Windows.Forms.Label lblParticipants;
         private System.Windows.Forms.Button btnViewParticipants;
         private System.Windows.Forms.Label lblParticipantsCount;
+        private System.Windows.Forms.Label lblPresenter;
+        private System.Windows.Forms.Label lblPresenterName;
     }
 }

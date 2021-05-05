@@ -126,8 +126,22 @@ namespace Workshop_Management
             db.ShowDialog();
         }
 
-        private void ViewParticipantsForm_Load(object sender, EventArgs e)
+        private void btnMark_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Person selectedPerson = (Person)lbxParticipants.SelectedItem;
+                if (selectedPerson == null)
+                {
+                    throw new ArgumentException($"Please select a participant from the list.");
+                }
+                this.workshop.Presenter = selectedPerson;
+                Data.UpdateWorkshops(this.workshops);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
     }
