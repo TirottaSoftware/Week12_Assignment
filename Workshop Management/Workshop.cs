@@ -62,6 +62,7 @@ namespace Workshop_Management
         public Workshop(string title, string description, int capacity)
         {
             this.participants = new List<Person>();
+            this.IsAvailable = true;
             this.Title = title;
             this.Description = description;
             this.Capacity = capacity;

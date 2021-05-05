@@ -112,6 +112,7 @@ namespace Workshop_Management
             this.Name = "ViewParticipantsForm";
             this.Text = "ViewParticipantsForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ViewParticipantsForm_FormClosed);
+            this.Load += new System.EventHandler(this.ViewParticipantsForm_Load);
             this.ResumeLayout(false);
 
         }

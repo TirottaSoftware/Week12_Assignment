@@ -122,8 +122,16 @@ namespace Workshop_Management
         {
             if (this.workshops.Contains(ws))
             {
+                foreach (var person in this.people)
+                {
+                    if (person.Enrolments.Any(e=>e.Key.WorkshopCode == ws.WorkshopCode))
+                    {
+                        person.Disenroll(ws);
+                    }
+                }
                 this.workshops.Remove(ws);
                 Data.UpdateWorkshops(this.workshops);
+                Data.UpdatePeople(this.people);
                 UpdateWorkshopsList();
             }
             else
@@ -146,6 +154,10 @@ namespace Workshop_Management
                 Person p = (Person)lbxPeople.SelectedItem;
                 this.RemovePerson(p);
             }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show($"Please select a person first");
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -160,7 +172,8 @@ namespace Workshop_Management
         private void lbxPeople_DoubleClick(object sender, EventArgs e)
         {
             Person p = (Person)lbxPeople.SelectedItem;
-            MessageBox.Show($"{p.GetType().Name} \n{p.FirstName} {p.LastName} \nPCN: {p.PCN} \n{p.GetEnrolmentsInfo()}");
+            PersonInfoForm personInfo = new PersonInfoForm(p);
+            personInfo.ShowDialog();
         }
 
         private void btnAddWorkshop_Click(object sender, EventArgs e)
@@ -175,7 +188,13 @@ namespace Workshop_Management
             try
             {
                 Workshop ws = (Workshop)lbxWorkshops.SelectedItem;
+                
+                Data.UpdatePeople(this.people);
                 this.RemoveWorkshop(ws);
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show($"Please select a workshop first");
             }
             catch (Exception ex)
             {

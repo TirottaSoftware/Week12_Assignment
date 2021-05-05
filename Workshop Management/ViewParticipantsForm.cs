@@ -14,9 +14,11 @@ namespace Workshop_Management
     {
         private Workshop workshop;
         private List<Workshop> workshops;
+        private List<Person> people;
         public ViewParticipantsForm(Workshop ws)
         {
             this.workshops = Data.GetWorkshops();
+            this.people = Data.GetPeople();
             this.workshop = this.workshop = this.workshops.First(w => w.Title == ws.Title);
             InitializeComponent();
             RefreshList();
@@ -43,7 +45,9 @@ namespace Workshop_Management
                 {
                     throw new Exception($"Workshop has already started");
                 }
-                Person selectedPerson = (Person)cbxPeople.SelectedItem;
+                Person person = (Person)cbxPeople.SelectedItem;
+                Person selectedPerson = this.people.First(p => p.PCN == person.PCN);
+
                 if (selectedPerson == null)
                 {
                     throw new NullReferenceException();
@@ -53,6 +57,8 @@ namespace Workshop_Management
                     throw new ArgumentException($"{selectedPerson.FirstName} {selectedPerson.LastName} already in the list");
                 }
                 this.workshop.AddParticipant(selectedPerson);
+                selectedPerson.Enroll(this.workshop);
+                Data.UpdatePeople(this.people);
                 Data.UpdateWorkshops(this.workshops);
                 RefreshList();
             }
@@ -118,6 +124,11 @@ namespace Workshop_Management
             this.Hide();
             Dashboard db = new Dashboard();
             db.ShowDialog();
+        }
+
+        private void ViewParticipantsForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

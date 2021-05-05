@@ -14,3 +14,4 @@ C:\Users\Cristian\source\repos\Workshop Management\Week12_Assignment\Workshop Ma
 C:\Users\Cristian\source\repos\Workshop Management\Week12_Assignment\Workshop Management\obj\Debug\Workshop_Management.EditWorkshopForm.resources
 C:\Users\Cristian\source\repos\Workshop Management\Week12_Assignment\Workshop Management\obj\Debug\Workshop_Management.WorkshopInfoForm.resources
 C:\Users\Cristian\source\repos\Workshop Management\Week12_Assignment\Workshop Management\obj\Debug\Workshop_Management.ViewParticipantsForm.resources
+C:\Users\Cristian\source\repos\Workshop Management\Week12_Assignment\Workshop Management\obj\Debug\Workshop_Management.PersonInfoForm.resources

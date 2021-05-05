@@ -53,7 +53,7 @@ namespace Workshop_Management
                 firstName = value;
             }
         }
-
+        public Dictionary<Workshop, string> Enrolments => this.enrolments;
         public Person(string firstName, string lastName, int pcn)
         {
             this.enrolments = new Dictionary<Workshop, string>();
@@ -67,9 +67,10 @@ namespace Workshop_Management
         }
         public void Disenroll(Workshop ws)
         {
-            if (this.enrolments.ContainsKey(ws))
+            if (this.enrolments.Any(w=>w.Key.WorkshopCode == ws.WorkshopCode))
             {
-                this.enrolments.Remove(ws);
+                Workshop workshop = this.enrolments.Keys.First(e => e.WorkshopCode == ws.WorkshopCode);
+                this.enrolments.Remove(workshop);
             }
             else
             {
