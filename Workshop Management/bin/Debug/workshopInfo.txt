@@ -1,0 +1,2 @@
+ONLINE(Title: Workshop-1, Description: asdfasdf, Teacher: None, Capacity: 3, URL:https://url.com/omg)
+INBUILDING(Title:asdasd, Description:asd, Teacher:None, Capacity:1, Location: 12sadasd235 4) 

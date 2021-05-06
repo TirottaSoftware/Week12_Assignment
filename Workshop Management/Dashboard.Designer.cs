@@ -45,6 +45,7 @@ namespace Workshop_Management
             this.btnEditPerson = new System.Windows.Forms.Button();
             this.btnAddPerson = new System.Windows.Forms.Button();
             this.btnRemovePerson = new System.Windows.Forms.Button();
+            this.btnGetFile = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbxPeople
@@ -239,12 +240,24 @@ namespace Workshop_Management
             this.btnRemovePerson.UseVisualStyleBackColor = false;
             this.btnRemovePerson.Click += new System.EventHandler(this.btnRemovePerson_Click);
             // 
+            // btnGetFile
+            // 
+            this.btnGetFile.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGetFile.Location = new System.Drawing.Point(259, 353);
+            this.btnGetFile.Name = "btnGetFile";
+            this.btnGetFile.Size = new System.Drawing.Size(136, 33);
+            this.btnGetFile.TabIndex = 61;
+            this.btnGetFile.Text = "File";
+            this.btnGetFile.UseVisualStyleBackColor = true;
+            this.btnGetFile.Click += new System.EventHandler(this.btnGetFile_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(654, 398);
+            this.Controls.Add(this.btnGetFile);
             this.Controls.Add(this.lblWorkshopsTitle);
             this.Controls.Add(this.btnEditWorkshop);
             this.Controls.Add(this.btnAddWorkshop);
@@ -287,6 +300,7 @@ namespace Workshop_Management
         private System.Windows.Forms.ListBox lbxWorkshops;
         private System.Windows.Forms.Label lblSort;
         private System.Windows.Forms.Label lblWorkshopsTitle;
+        private System.Windows.Forms.Button btnGetFile;
     }
 }
 

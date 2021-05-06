@@ -245,5 +245,10 @@ namespace Workshop_Management
             string selectedOption = cbxSortWorkshops.SelectedItem.ToString();
             UpdateWorkshopsList(selectedOption);
         }
+
+        private void btnGetFile_Click(object sender, EventArgs e)
+        {
+            Data.GetWorkshopsFile();
+        }
     }
 }

@@ -33,10 +33,8 @@ namespace Workshop_Management
         protected override string GenerateWorkshopCode()
         {
             Random rnd = new Random();
-            string result = "";
+            string result = "IBW-";
             result += this.Title[0];
-            result += this.Address[0];
-            result += this.roomNumber;
             result += rnd.Next(101, 999);
             return result;
         }

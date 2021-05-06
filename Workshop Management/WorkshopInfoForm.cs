@@ -59,6 +59,5 @@ namespace Workshop_Management
             viewParticipantsForm.ShowDialog();
         }
 
-
     }
 }

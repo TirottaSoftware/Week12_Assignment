@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -112,6 +113,58 @@ namespace Workshop_Management
                 if (fs != null)
                 {
                     fs.Close();
+                }
+            }
+        }
+        public static void GetWorkshopsFile()
+        {
+            FileStream fs = null;
+            StreamWriter sw = null;
+            try
+            {
+                fs = new FileStream("workshopInfo.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                sw = new StreamWriter(fs);
+
+                List<Workshop> workshops = Data.GetWorkshops();
+                foreach (var workshop in workshops.Where(w=>w.GetType().Name == nameof(OnlineWorkshop)))
+                {
+                    OnlineWorkshop ws = (OnlineWorkshop)workshop;
+                    string teacher;
+                    if (ws.Presenter != null)
+                    {
+                         teacher = ws.Presenter.FirstName + " " + ws.Presenter.LastName;
+                    }
+                    else
+                    {
+                        teacher = "None";
+                    }
+                    sw.WriteLine($"ONLINE(Title: {ws.Title}, Description: {ws.Description}, Teacher: {teacher}, Capacity: {ws.Capacity}, URL:{ws.URL})");
+                }
+                foreach (var workshop in workshops.Where(w => w.GetType().Name == nameof(InBuildingWorkshop)))
+                {
+                    InBuildingWorkshop ws = (InBuildingWorkshop)workshop;
+                    string teacher;
+                    if (ws.Presenter != null)
+                    {
+                        teacher = ws.Presenter.FirstName + " " + ws.Presenter.LastName;
+                    }
+                    else
+                    {
+                        teacher = "None";
+                    }
+                    sw.WriteLine($"INBUILDING(Title:{ws.Title}, Description:{ws.Description}, Teacher:{teacher}, Capacity:{ws.Capacity}, Location: {ws.Address} {ws.RoomNumber}) ");
+                    Process.Start("workshopInfo.txt");
+                }
+            }
+            catch (IOException)
+            {
+                MessageBox.Show("Error writing file");
+            }
+            finally
+            {
+                if (sw != null)
+                {
+                    sw.Close();
                 }
             }
         }
