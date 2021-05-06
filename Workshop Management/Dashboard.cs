@@ -110,7 +110,14 @@ namespace Workshop_Management
             if (this.people.Contains(person))
             {
                 this.people.Remove(person);
+                foreach (var ws in this.workshops.Where(w=>w.GetParticipants().Any(p=>p.PCN == person.PCN)))
+                {
+                    Person personToRemove = ws.GetParticipants().FirstOrDefault(p => p.PCN == person.PCN);
+                    ws.RemoveParticipant(personToRemove);
+                }
+                Data.UpdateWorkshops(this.workshops);
                 Data.UpdatePeople(this.people);
+                UpdateWorkshopsList();
                 UpdatePeopleList();
             }
             else
