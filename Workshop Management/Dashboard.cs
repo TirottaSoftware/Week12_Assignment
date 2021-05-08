@@ -127,8 +127,9 @@ namespace Workshop_Management
         }
         private void RemoveWorkshop(Workshop ws)
         {
-            if (this.workshops.Contains(ws))
+            if (this.workshops.Any(w => w.WorkshopCode == ws.WorkshopCode))
             {
+                ws = this.workshops.First(w => w.WorkshopCode == ws.WorkshopCode);
                 foreach (var person in this.people)
                 {
                     if (person.Enrolments.Any(e=>e.Key.WorkshopCode == ws.WorkshopCode))

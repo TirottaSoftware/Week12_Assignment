@@ -126,13 +126,16 @@ namespace Workshop_Management
                 sw = new StreamWriter(fs);
 
                 List<Workshop> workshops = Data.GetWorkshops();
-                foreach (var workshop in workshops.Where(w=>w.GetType().Name == nameof(OnlineWorkshop)))
+
+                fs.SetLength(0);
+
+                foreach (var workshop in workshops.Where(w => w.GetType().Name == nameof(OnlineWorkshop)))
                 {
                     OnlineWorkshop ws = (OnlineWorkshop)workshop;
                     string teacher;
                     if (ws.Presenter != null)
                     {
-                         teacher = ws.Presenter.FirstName + " " + ws.Presenter.LastName;
+                        teacher = ws.Presenter.FirstName + " " + ws.Presenter.LastName;
                     }
                     else
                     {
@@ -153,8 +156,10 @@ namespace Workshop_Management
                         teacher = "None";
                     }
                     sw.WriteLine($"INBUILDING(Title:{ws.Title}, Description:{ws.Description}, Teacher:{teacher}, Capacity:{ws.Capacity}, Location: {ws.Address} {ws.RoomNumber}) ");
-                    Process.Start("workshopInfo.txt");
+                    //var path = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
+                    //path = path.Substring(6);
                 }
+                Process.Start("notepad.exe", "workshopInfo");
             }
             catch (IOException)
             {

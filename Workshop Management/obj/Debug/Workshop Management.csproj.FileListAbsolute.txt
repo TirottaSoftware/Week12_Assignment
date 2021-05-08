@@ -9,7 +9,6 @@ C:\Users\Cristian\source\repos\Workshop Management\Week12_Assignment\Workshop Ma
 C:\Users\Cristian\source\repos\Workshop Management\Week12_Assignment\Workshop Management\obj\Debug\Workshop Management.csproj.CoreCompileInputs.cache
 C:\Users\Cristian\source\repos\Workshop Management\Week12_Assignment\Workshop Management\obj\Debug\Workshop Management.exe
 C:\Users\Cristian\source\repos\Workshop Management\Week12_Assignment\Workshop Management\obj\Debug\Workshop Management.pdb
-C:\Users\Cristian\source\repos\Workshop Management\Week12_Assignment\Workshop Management\obj\Debug\Workshop Management.csprojAssemblyReference.cache
 C:\Users\Cristian\source\repos\Workshop Management\Week12_Assignment\Workshop Management\obj\Debug\Workshop_Management.EditPersonForm.resources
 C:\Users\Cristian\source\repos\Workshop Management\Week12_Assignment\Workshop Management\obj\Debug\Workshop_Management.EditWorkshopForm.resources
 C:\Users\Cristian\source\repos\Workshop Management\Week12_Assignment\Workshop Management\obj\Debug\Workshop_Management.WorkshopInfoForm.resources
